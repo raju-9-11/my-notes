@@ -17,7 +17,6 @@ class notesSQLiteonlinehelper(context: Context): SQLiteOpenHelper(context , "Myn
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
-        TODO("Not yet implemented")
     }
 
 }
