@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">My Notes</string>
-    <string name="Title">Title</string>
+    <string name="app_name" translatable="false">My Notes</string>
+    <string name="Title" translatable="false">Title</string>
 </resources>

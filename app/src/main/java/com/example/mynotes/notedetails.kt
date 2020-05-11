@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mynotesZZ.notesSQLiteonlinehelper
@@ -88,6 +89,8 @@ class notedetails : AppCompatActivity() {
     }
     fun sendnote(notevalues: ContentValues){
         Snackbar.make(findViewById(android.R.id.content),"Under Construction",Snackbar.LENGTH_SHORT).show()
+        editText4.visibility=View.VISIBLE
+
     }
 
     val dialogClickListener = DialogInterface.OnClickListener { _, which ->
