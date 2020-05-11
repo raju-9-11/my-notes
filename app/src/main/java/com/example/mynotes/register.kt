@@ -18,7 +18,6 @@ class register : AppCompatActivity() {
             val em = editText4.text.toString()
             val pass1 = editText5.text.toString()
             val pass2 = editText6.text.toString()
-            Toast.makeText(this,"Your pass is $pass1",Toast.LENGTH_SHORT).show()
         }
     }
 }
