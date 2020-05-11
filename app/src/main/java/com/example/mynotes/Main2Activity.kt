@@ -17,8 +17,15 @@ class Main2Activity : AppCompatActivity() {
         setContentView(R.layout.activity_main2)
         var user= editText2.text.toString()
         var pass = editText3.text.toString()
+        val mediaPlayer = MediaPlayer.create(this,R.raw.home)
 
-
+        play.setOnClickListener{
+            if(mediaPlayer.isPlaying){
+                mediaPlayer.pause()
+            }else {
+                mediaPlayer.start()
+            }
+        }
         button.setOnClickListener{
             val intent = Intent(this,MainActivity::class.java)
             startActivity(intent)
