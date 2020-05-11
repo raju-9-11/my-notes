@@ -18,11 +18,13 @@ class Main2Activity : AppCompatActivity() {
         var user= editText2.text.toString()
         var pass = editText3.text.toString()
 
-        play.setOnClickListener{
 
-        }
         button.setOnClickListener{
             val intent = Intent(this,MainActivity::class.java)
+            startActivity(intent)
+        }
+        button3.setOnClickListener{
+            val intent = Intent(this,register::class.java)
             startActivity(intent)
         }
     }
