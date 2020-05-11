@@ -7,16 +7,15 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main2.*
 
 class Main2Activity : AppCompatActivity() {
-    var db:Userdatabasehelper?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
-        var user= editText2.text.toString()
-        var pass = editText3.text.toString()
+
         val mediaPlayer = MediaPlayer.create(this,R.raw.home)
 
         play.setOnClickListener{
@@ -26,13 +25,24 @@ class Main2Activity : AppCompatActivity() {
                 mediaPlayer.start()
             }
         }
-        button.setOnClickListener{
-            val intent = Intent(this,MainActivity::class.java)
-            startActivity(intent)
+        button.setOnClickListener {
+            val user= editText2.text.toString()
+            val pass = editText3.text.toString()
+            if (user.length > 4 && pass.length > 4) {
+
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+
+            } else {
+                Toast.makeText(
+                    this,
+                    "Username and password should be atleast 5 characters long",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
         }
         button3.setOnClickListener{
-            val intent = Intent(this,register::class.java)
-            startActivity(intent)
+            Snackbar.make(findViewById(android.R.id.content),"Under Construction",Snackbar.LENGTH_SHORT).show()
         }
     }
 }

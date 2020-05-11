@@ -6,11 +6,11 @@ import android.content.DialogInterface
 import android.content.Intent
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.mynotesZZ.notesSQLiteonlinehelper
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_notedetails.*
@@ -42,12 +42,13 @@ class notedetails : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
+        val newvalues = ContentValues()
+        newvalues.put("TITLE", editText.text.toString())
+        newvalues.put("DESCRIPTION", editTextDEscription.text.toString())
 
         if (item!!.itemId == R.id.save_note){
 
-            val newvalues = ContentValues()
-            newvalues.put("TITLE", editText.text.toString())
-            newvalues.put("DESCRIPTION", editTextDEscription.text.toString())
+
             if (editText.text.isEmpty() ){
                 Toast.makeText(
                     this,
@@ -65,6 +66,8 @@ class notedetails : AppCompatActivity() {
             startActivity(intent)
         }else if(item!!.itemId==R.id.delete_note){
             deletenote()
+        }else if(item!!.itemId==R.id.send_note){
+            sendnote(newvalues)
         }
         return super.onOptionsItemSelected(item)
     }
@@ -73,7 +76,7 @@ class notedetails : AppCompatActivity() {
         var builder = AlertDialog.Builder(this)
 
 
-        builder.setTitle("Deleting Node")
+        builder.setTitle("Deleting Note")
 
         builder.setMessage("The note '${editText.text}' will be deleted")
         builder.setPositiveButton("YES",dialogClickListener)
@@ -83,6 +86,10 @@ class notedetails : AppCompatActivity() {
 
 
     }
+    fun sendnote(notevalues: ContentValues){
+        Snackbar.make(findViewById(android.R.id.content),"Under Construction",Snackbar.LENGTH_SHORT).show()
+    }
+
     val dialogClickListener = DialogInterface.OnClickListener { _, which ->
         if(which == DialogInterface.BUTTON_POSITIVE){
             db!!.delete("NOTES","_id=?", arrayOf(noteId.toString()))

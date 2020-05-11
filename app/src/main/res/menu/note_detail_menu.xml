@@ -8,6 +8,15 @@
         app:showAsAction="always">
 
     </item>
+
+    <item
+        android:id="@+id/send_note"
+        android:icon="@drawable/ic_send_white_24dp"
+        android:title="send"
+        app:showAsAction="ifRoom">
+
+    </item>
+
     <item
         android:id="@+id/delete_note"
         android:icon="@drawable/ic_delete_forever_white_24dp"
@@ -15,4 +24,5 @@
         app:showAsAction="ifRoom">
 
     </item>
+
 </menu>
