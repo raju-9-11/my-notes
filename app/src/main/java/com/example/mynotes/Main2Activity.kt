@@ -34,7 +34,7 @@ class Main2Activity : AppCompatActivity() {
             val user= editText2.text.toString()
             val pass = editText3.text.toString()
             if (user.length > 4 && pass.length > 4) {
-
+                Toast.makeText(this,"Hello $user",Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
 
