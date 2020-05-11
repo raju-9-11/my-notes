@@ -54,6 +54,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
+        val intent= Intent(this,Main2Activity::class.java)
+        startActivity(intent)
         cursor!!.close()
         db!!.close()
     }
