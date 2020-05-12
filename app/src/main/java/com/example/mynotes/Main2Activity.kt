@@ -1,9 +1,11 @@
 package com.example.mynotes
 
+import android.content.Context
 import android.content.Intent
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.webkit.WebView
 import android.widget.Button
 import android.widget.TextView
@@ -21,8 +23,11 @@ class Main2Activity : AppCompatActivity() {
             this,
             R.raw.home
         )
-        val web:WebView = findViewById(R.id.webview)
-        web.loadUrl("https://www.google.com/")
+        web.setOnClickListener{
+            val w : WebView = findViewById(R.id.webview)
+            w.loadUrl("https://www.google.com")
+            w.visibility= View.VISIBLE
+        }
         play.setOnClickListener{
             if(mediaPlayer.isPlaying){
                 mediaPlayer.pause()

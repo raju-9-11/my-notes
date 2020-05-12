@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name" translatable="false">My Notes</string>
     <string name="Title" translatable="false">Title</string>
+
+    <string name="title_activity_web">Web</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>
