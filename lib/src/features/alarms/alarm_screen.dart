@@ -148,7 +148,6 @@ class _AlarmScreenState extends ConsumerState<AlarmScreen> {
                     presentBanner: true,
                 ),
             ),
-            uiLocalNotificationDateInterpretation: UILocalNotificationDateInterpretation.absoluteTime,
             androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
             payload: selectedSong['uri'],
         );
